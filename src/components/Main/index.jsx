@@ -7,7 +7,7 @@ const Main = ({weatherData = null}) => {
         <div>
             {weatherData ? (<div>
                 <h2>{weatherData?.name}</h2>
-                <h3>{weatherData?.main.temp} C </h3>
+                <h3>{weatherData?.main.temp} &#176;C </h3>
             </div>
             ) : (<p>Enter the city</p>)
             }
