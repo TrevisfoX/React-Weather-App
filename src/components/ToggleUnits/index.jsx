@@ -5,12 +5,7 @@ const ToggleUnits = ({units, setUnits}) => {
     const isCelcium = units === 'metric';
 
     const toggleUnits = () => {
-        // if (units === 'metric') {
-        //     setUnits('imperial');
-        // } else {
-        //     setUnits('metric');
-        // }
-        setUnits(units === 'metric' ? 'imperial' : 'metric')
+        setUnits(units === 'metric' ? 'imperial' : 'metric');
     };
 
     return (
