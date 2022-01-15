@@ -1,0 +1,35 @@
+.form {
+
+    .btn-form {
+        margin: 0 25px;
+        width: 40px;
+        height: 40px;
+        background-color: orange;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        padding: 5px;
+        cursor: pointer;
+        outline: none;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .input-form {
+        max-width: 300px;
+        width: 300px;
+        padding: 5px;
+        background: transparent;
+        color: white;
+        border: none;
+        border-bottom: 2px solid white;
+        outline: none;
+        transition: 0.5s;
+        font-size: x-large;
+    }
+    
+    .input-form:focus {
+        border-bottom: 2px solid orange;
+    }
+}

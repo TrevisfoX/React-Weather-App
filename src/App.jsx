@@ -2,11 +2,12 @@ import { useState, useEffect } from "react";
 import "./App.scss";
 import Header from "./components/Header";
 import Main from "./components/Main";
+import background from "./assets/background.jpg"
 
 const appId = "348d1a1ae88f5ceb7b6797a0de54ffc2";
 const days = [
-  "Sundey",
-  "Mondey",
+  "Sunday",
+  "Monday",
   "Tuesday",
   "Wednesday",
   "Thursday",
@@ -70,19 +71,14 @@ function App() {
   };
 
   useEffect(() => {
-    if (weatherData) {
-      setDate(new Date(weatherData?.dt * 1000));
-    }
-  }, [weatherData]);
-
-  useEffect(() => {
     if (weatherData?.name) {
       updateWeatherData(weatherData?.name);
+      console.log(weatherData);
     }
   }, [units]);
 
   return (
-    <div className="App">
+    <div className="App" style={{backgroundImage: `url(${background})`}}>
       <Header
         setWeatherData={setWeatherData}
         fetchWeather={fetchWeather}
@@ -90,9 +86,14 @@ function App() {
         units={units}
         setUnits={setUnits}
       />
-      <Main weatherData={weatherData} units={units} />
-      <p>{`${days[date?.getDay()]} ${date?.getTime()}`}</p>
+      <Main 
+      weatherData={weatherData} 
+      setDate={setDate}
+      units={units} 
+      date={date} 
+      days={days}/>
     </div>
+    
   );
 }
 
