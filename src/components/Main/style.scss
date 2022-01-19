@@ -1,11 +1,18 @@
 .main-wrapper {
-    margin: 25px;
-    width: fit-content;
-    height: fit-content;
     padding: 20px;
-    background-color: rgb(173, 222, 255);
-    color: rgb(73, 73, 73);
-    border-radius: 10px;
-    -webkit-backdrop-filter: blur(10px);
-	backdrop-filter: blur(10px);
+    color: rgb(253, 253, 253);
+}
+
+.city-name {
+    font-size: 80px;
+    margin-bottom: 20px;
+}
+
+.temperature {
+    font-size: 60px;
+    margin-bottom: 15px;
+}
+
+.date-container {
+    font-size: 40px;
 }

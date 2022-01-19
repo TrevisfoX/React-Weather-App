@@ -24,7 +24,6 @@ function App() {
   const getCoordinates = () => {
     const options = {
       enableHighAccuracy: true,
-      timeout: 0,
       maximumAge: 0,
     };
 
@@ -44,7 +43,6 @@ function App() {
   }, []);
 
   useEffect(() => {
-    console.log(coordinates);
     if (coordinates) {
       fetchWeatherByCoordinates(coordinates.latitude, coordinates.longitude);
     }

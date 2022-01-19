@@ -1,6 +1,6 @@
 import React from "react";
 import './style.scss';
-import SearchIcon from '@mui/icons-material/Search';
+
 
 const Search = ({ updateWeatherData }) => {
   const handleSubmit = async (event) => {
@@ -13,7 +13,7 @@ const Search = ({ updateWeatherData }) => {
     <div>
       <form className="form" action="#" onSubmit={handleSubmit}>
         <input className="input-form" type="text" placeholder="Enter the name of the city"/>
-        <button className="btn-form" type="submit"><SearchIcon /></button>
+        <button className="btn-form" type="submit">Search</button>
       </form>
     </div>
   );
