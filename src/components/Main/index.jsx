@@ -11,7 +11,7 @@ const Main = ({ weatherData = null, units, days, setDate, date }) => {
   return (
     <main className="main-wrapper">
       <div>
-        {weatherData ? (
+        {weatherData?.main ? (
           <div>
             <h2 className="city-name">{weatherData?.name}</h2>
             <h3 className="temperature">
@@ -33,7 +33,11 @@ const Main = ({ weatherData = null, units, days, setDate, date }) => {
           ""
         )}
         <div className="date-container">
-          <p>{date ? `${days[date?.getDay()]} ,${date?.getDate()}` : 'The city was not chosen'}</p>
+          <p>
+            {weatherData?.main
+              ? `${days[date?.getDay()]} ,${date?.getDate()}`
+              : "The city was not chosen"}
+          </p>
         </div>
       </div>
     </main>
