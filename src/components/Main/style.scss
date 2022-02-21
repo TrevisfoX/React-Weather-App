@@ -16,3 +16,21 @@
 .date-container {
     font-size: 40px;
 }
+
+.min-max-temp {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+
+    .min-temp {
+        padding: 0 40px;
+    }
+
+    .max-temp {
+        padding: 0 40px;
+    }
+
+    & {
+        font-size: 40px;
+    }
+}

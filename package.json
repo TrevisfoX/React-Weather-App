@@ -16,6 +16,7 @@
     "react-scripts": "5.0.0",
     "sass": "^1.47.0",
     "styled-components": "^5.3.3",
+    "weather-icons": "https://github.com/erikflowers/weather-icons.git",
     "web-vitals": "^2.1.0"
   },
   "scripts": {

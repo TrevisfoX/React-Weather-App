@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import "./App.scss";
 import Header from "./components/Header";
 import Main from "./components/Main";
-import background from "./assets/background.jpg"
+import background from "./assets/background.jpg";
+import 'weather-icons/css/weather-icons.css';
 
 const appId = "348d1a1ae88f5ceb7b6797a0de54ffc2";
 const days = [
@@ -75,6 +76,8 @@ function App() {
     }
   }, [units]);
 
+  console.log(weatherData);
+
   return (
     <div className="App" style={{backgroundImage: `url(${background})`}}>
       <Header
@@ -85,11 +88,12 @@ function App() {
         setUnits={setUnits}
       />
       <Main 
-      weatherData={weatherData} 
-      setDate={setDate}
-      units={units} 
-      date={date} 
-      days={days}/>
+        weatherData={weatherData} 
+        setDate={setDate}
+        units={units} 
+        date={date} 
+        days={days}
+      />
     </div>
     
   );

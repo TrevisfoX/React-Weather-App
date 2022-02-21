@@ -8548,6 +8548,10 @@ wbuf@^1.1.0, wbuf@^1.7.3:
   dependencies:
     minimalistic-assert "^1.0.0"
 
+"weather-icons@https://github.com/erikflowers/weather-icons.git":
+  version "2.0.12"
+  resolved "https://github.com/erikflowers/weather-icons.git#bb80982bf1f43f2d57f9dd753e7413bf88beb9ed"
+
 web-vitals@^2.1.0:
   version "2.1.3"
   resolved "https://registry.yarnpkg.com/web-vitals/-/web-vitals-2.1.3.tgz#6dca59f41dbc3fcccdb889da06191b437b18f534"
