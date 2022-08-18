@@ -1,14 +1,34 @@
 .bold {
-    font-weight: bolder;
+	font-weight: bold;
 }
 
 .toggle-button {
-    border: 1px solid white;
-    color: white;
-    cursor: pointer;
-    border-radius: 4px;
-    width: fit-content;
-    height: fit-content;
-    padding: 5px;
-    user-select: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 50px;
+	padding: 0px 20px;
+	background-color: #ffffff;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	font-family: "Roboto", sans-serif;
+	border-radius: 8px;
+	font-size: 20px;
+	transition: 0.5s;
+}
+
+.toggle-button:hover {
+	background-color: #d1d1d1;
+}
+
+.toggle-spacer {
+	padding: 0 10px;
+}
+
+@media screen and (max-width: 800px) {
+	.toggle-button {
+		height: 35px;
+		padding: 0px 15px;
+	}
 }

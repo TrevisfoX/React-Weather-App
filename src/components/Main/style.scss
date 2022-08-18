@@ -1,36 +1,30 @@
 .main-wrapper {
-    padding: 20px;
-    color: rgb(253, 253, 253);
+
 }
 
 .city-name {
-    font-size: 80px;
-    margin-bottom: 20px;
+
 }
 
 .temperature {
-    font-size: 60px;
-    margin-bottom: 15px;
+
 }
 
 .date-container {
-    font-size: 40px;
+
 }
 
 .min-max-temp {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 15px;
+
 
     .min-temp {
-        padding: 0 40px;
     }
 
     .max-temp {
-        padding: 0 40px;
+
     }
 
     & {
-        font-size: 40px;
+
     }
 }
