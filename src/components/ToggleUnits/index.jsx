@@ -1,19 +1,20 @@
 import React from "react";
 import "./style.scss";
 
-const ToggleUnits = ({units, setUnits}) => {
-  const isCelcium = units === "metric";
+const ToggleUnits = ({ units, setUnits }) => {
+	const isCelcium = units === "metric";
 
-  const toggleUnits = () => {
-    setUnits(units === "metric" ? "imperial" : "metric");
-  };
+	const toggleUnits = () => {
+		setUnits(units === "metric" ? "imperial" : "metric");
+	};
 
-  return (
-    <div onClick={toggleUnits} className="toggle-button">
-      <span className={`${isCelcium && "bold"}`}>&#176;C</span>/
-      <span className={`${!isCelcium && "bold"}`}>&#176;F</span>
-    </div>
-  );
+	return (
+		<button onClick={toggleUnits} className="toggle-button">
+			<p className={`${isCelcium && "bold"}`}>&#176;C</p>
+			<span className="toggle-spacer">/</span>
+			<p className={`${!isCelcium && "bold"}`}>&#176;F</p>
+		</button>
+	);
 };
 
 export default ToggleUnits;

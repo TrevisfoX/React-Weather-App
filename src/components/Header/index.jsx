@@ -2,18 +2,20 @@ import React from "react";
 import Search from "../Search";
 import ToggleMetricSystem from "../ToggleUnits";
 import "./style.scss";
+import logo from "../../assets/logo.png";
 
 const Header = ({ units, setUnits, updateWeatherData }) => {
-  return (
-    <header className="header">
-      <Search units={units} updateWeatherData={updateWeatherData} />
-      <ToggleMetricSystem
-        units={units}
-        setUnits={setUnits}
-        updateWeatherData={updateWeatherData}
-      />
-    </header>
-  );
+	return (
+		<header className="header">
+			<img src={logo} alt="Logo" className="logo-header" />
+			<Search units={units} updateWeatherData={updateWeatherData} />
+			<ToggleMetricSystem
+				units={units}
+				setUnits={setUnits}
+				updateWeatherData={updateWeatherData}
+			/>
+		</header>
+	);
 };
 
 export default Header;

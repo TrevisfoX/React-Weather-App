@@ -1,32 +1,58 @@
 .form {
+	display: flex;
+}
 
-    .btn-form {
-        margin: 0 25px;
-        width: fit-content;
-        height: fit-content;
-        background-color: orange;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        padding: 10px;
-        cursor: pointer;
-        outline: none;
-    }
+.form-input {
+	padding: 5px 15px;
+	width: 500px;
+	height: 50px;
+	font-size: 20px;
+	font-family: "Roboto", sans-serif;
+	background: #ffffff;
+	border-radius: 8px 0px 0px 8px;
+	border: none;
+	outline: none;
+}
 
-    .input-form {
-        max-width: 300px;
-        width: 300px;
-        padding: 5px;
-        background: transparent;
-        color: white;
-        border: none;
-        border-bottom: 2px solid white;
-        outline: none;
-        transition: 0.5s;
-        font-size: x-large;
-    }
-    
-    .input-form:focus {
-        border-bottom: 2px solid orange;
-    }
+.form-button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 70px;
+	height: 50px;
+	border: none;
+	border-radius: 0px 8px 8px 0px;
+	background-color: #cecece;
+	cursor: pointer;
+}
+
+.form-button-image {
+	width: 25px;
+	height: 25px;
+}
+
+@media screen and (max-width: 800px) {
+	.form-input {
+		margin-bottom: 30px;
+		width: 300px;
+		height: 35px;
+		font-size: 16px;
+	}
+
+	.form-button {
+		width: 55px;
+		height: 35px;
+	}
+
+	.form-button-image {
+		width: 15px;
+		height: 15px;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.form-input {
+		margin-bottom: 30px;
+		width: 150px;
+	}
 }
