@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.scss";
-import search from "../../assets/magnifying-glass.png";
+import { FaSearch } from "react-icons/fa";
 
 const Search = ({ updateWeatherData }) => {
 	const handleSubmit = async (event) => {
@@ -13,11 +13,7 @@ const Search = ({ updateWeatherData }) => {
 		<form className="form" onSubmit={handleSubmit}>
 			<input type="text" className="form-input" placeholder="Search..." />
 			<button type="submit" className="form-button">
-				<img
-					src={search}
-					alt="Search button"
-					className="form-button-image"
-				/>
+				<FaSearch />
 			</button>
 		</form>
 	);
