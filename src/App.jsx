@@ -17,54 +17,39 @@ const days = [
 
 function App() {
 	const [weatherData, setWeatherData] = useState(null);
+	const [weatherDataHourly, setWeatherDataHourly] = useState(null);
 	const [units, setUnits] = useState("metric");
 	const [date, setDate] = useState(null);
-	const [coordinates, setCoordinates] = useState(null);
 
-	const getCoordinates = () => {
-		const options = {
-			enableHighAccuracy: true,
-			maximumAge: 0,
+	const fetchWeatherHourly = (lon, lat) => {
+		var requestOptions = {
+			method: "GET",
+			redirect: "follow",
 		};
-
-		const error = (error) => console.log(error);
-
-		navigator.geolocation.getCurrentPosition(
-			(pos) => {
-				setCoordinates(pos.coords);
-			},
-			error,
-			options
-		);
+		return fetch(
+			`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=alerts,minutely&appid=${appId}&units=${units}`,
+			requestOptions
+		)
+			.then((response) => response.json())
+			.then((result) => result);
 	};
-
-	useEffect(() => {
-		getCoordinates();
-	}, []);
-
-	useEffect(() => {
-		if (coordinates) {
-			fetchWeatherByCoordinates(
-				coordinates.latitude,
-				coordinates.longitude
-			);
-		}
-	}, [coordinates]);
 
 	const fetchWeather = (city) => {
+		var requestOptions = {
+			method: "GET",
+			redirect: "follow",
+		};
 		return fetch(
-			`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${appId}&units=${units}`
+			`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${appId}&units=${units}`,
+			requestOptions
 		)
 			.then((response) => response.json())
-			.then((json) => json);
-	};
-
-	const fetchWeatherByCoordinates = (lat, lon) => {
-		return fetch(
-			`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${appId}&units=${units}`
-		)
-			.then((response) => response.json())
-			.then((json) => setWeatherData(json));
+			.then(async (result) => {
+				setWeatherDataHourly(
+					await fetchWeatherHourly(result.coord.lon, result.coord.lat)
+				);
+				return result;
+			});
 	};
 
 	const updateWeatherData = async (city) => {
@@ -72,14 +57,16 @@ function App() {
 	};
 
 	useEffect(() => {
-		if (weatherData?.name) {
+		if (weatherData) {
 			updateWeatherData(weatherData?.name);
-			// console.log(weatherData);
 		}
 	}, [units]);
 
-	// console.log(weatherData);
-
+	useEffect(() => {
+		if (weatherData) {
+			setDate(new Date(weatherData?.dt * 1000));
+		}
+	}, [weatherData]);
 	return (
 		<div className="App">
 			<Header
@@ -89,13 +76,21 @@ function App() {
 				units={units}
 				setUnits={setUnits}
 			/>
-			<Main
-				weatherData={weatherData}
-				setDate={setDate}
-				units={units}
-				date={date}
-				days={days}
-			/>
+			{!weatherData && (
+				<div className="app_text_container">
+					<h1>Enter the city name</h1>
+				</div>
+			)}
+			{weatherData && (
+				<Main
+					weatherData={weatherData}
+					weatherDataHourly={weatherDataHourly}
+					setDate={setDate}
+					units={units}
+					date={date}
+					days={days}
+				/>
+			)}
 		</div>
 	);
 }

@@ -1,7 +1,15 @@
 import { useEffect } from "react";
+import HourlyForecast from "../HourlyForecast";
 import "./style.scss";
 
-const Main = ({ weatherData = null, units, days, setDate, date }) => {
+const Main = ({
+	weatherData = null,
+	weatherDataHourly = null,
+	units,
+	days,
+	setDate,
+	date,
+}) => {
 	useEffect(() => {
 		if (weatherData) {
 			setDate(new Date(weatherData?.dt * 1000));
@@ -9,25 +17,15 @@ const Main = ({ weatherData = null, units, days, setDate, date }) => {
 	}, [weatherData]);
 
 	return (
-		<main className="main-wrapper">
-			<div>
+		<main className="main">
+			<div className="main-info">
 				{weatherData?.main ? (
 					<div>
-						<h2 className="city-name">{weatherData?.name}</h2>
-						<h3 className="temperature">
+						<h1 className="city-name">{weatherData?.name}</h1>
+						<h2 className="temperature">
 							{weatherData?.main?.temp.toFixed()}{" "}
 							{units === "metric" ? "C" : "F"}&#176;{" "}
-						</h3>
-						{/* <div className="min-max-temp">
-							<h3 className="min-temp">
-								{weatherData?.main?.temp_min.toFixed()}{" "}
-								{units === "metric" ? "C" : "F"}&#176;{" "}
-							</h3>
-							<h3 className="max-temp">
-								{weatherData?.main?.temp_max.toFixed()}{" "}
-								{units === "metric" ? "C" : "F"}&#176;{" "}
-							</h3>
-						</div> */}
+						</h2>
 					</div>
 				) : (
 					""
@@ -36,9 +34,60 @@ const Main = ({ weatherData = null, units, days, setDate, date }) => {
 					<p>
 						{weatherData?.main
 							? `${days[date?.getDay()]}, ${date?.getDate()}`
-							: "The city was not chosen"}
+							: ""}
+					</p>
+					<p>
+						{weatherData?.main
+							? `${date?.getHours()}:
+						${date?.getMinutes() / 10 < 1 ? "0" : ""}
+						${date?.getMinutes()}`
+							: ""}
 					</p>
 				</div>
+			</div>
+			<div className="icon-block">
+				<HourlyForecast
+					weatherData={weatherData}
+					weatherDataHourly={weatherDataHourly}
+					units={units}
+					h={0}
+					date={date}
+				/>
+				<HourlyForecast
+					weatherData={weatherData}
+					weatherDataHourly={weatherDataHourly}
+					units={units}
+					h={1}
+					date={date}
+				/>
+				<HourlyForecast
+					weatherData={weatherData}
+					weatherDataHourly={weatherDataHourly}
+					units={units}
+					h={2}
+					date={date}
+				/>
+				<HourlyForecast
+					weatherData={weatherData}
+					weatherDataHourly={weatherDataHourly}
+					units={units}
+					h={3}
+					date={date}
+				/>
+				<HourlyForecast
+					weatherData={weatherData}
+					weatherDataHourly={weatherDataHourly}
+					units={units}
+					h={4}
+					date={date}
+				/>
+				<HourlyForecast
+					weatherData={weatherData}
+					weatherDataHourly={weatherDataHourly}
+					units={units}
+					h={5}
+					date={date}
+				/>
 			</div>
 		</main>
 	);
