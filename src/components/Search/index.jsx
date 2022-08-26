@@ -10,9 +10,13 @@ const Search = ({ updateWeatherData }) => {
 	};
 
 	return (
-		<form className="form" onSubmit={handleSubmit}>
-			<input type="text" className="form-input" placeholder="Search..." />
-			<button type="submit" className="form-button">
+		<form className="search-form" onSubmit={handleSubmit}>
+			<input
+				type="text"
+				className="search-form__input"
+				placeholder="Search..."
+			/>
+			<button type="submit" className="search-form__submit">
 				<FaSearch />
 			</button>
 		</form>

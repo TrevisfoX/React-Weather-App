@@ -11,7 +11,7 @@ const ToggleUnits = ({ units, setUnits }) => {
 	return (
 		<button onClick={toggleUnits} className="toggle-button">
 			<p className={`${isCelcium && "bold"}`}>&#176;C</p>
-			<span className="toggle-spacer">/</span>
+			<span className="toggle-button__spacer">/</span>
 			<p className={`${!isCelcium && "bold"}`}>&#176;F</p>
 		</button>
 	);

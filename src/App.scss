@@ -5,13 +5,22 @@
 }
 
 .App {
-	height: 100vh;
-	padding: 50px 0;
 	background-color: #2b303b;
-}
+	font-family: "Roboto", sans-serif;
 
-.app_text_container {
-	font-size: 20px;
-	color: #ffffff;
-	text-align: center;
+	.container {
+		max-width: 1140px;
+		height: 100vh;
+		padding: 50px 15px;
+		margin: 0 auto;
+	}
+
+	.title {
+		h1 {
+			margin: 40px 0 0 0;
+			font-size: 30px;
+			color: #ffffff;
+			text-align: center;
+		}
+	}
 }
