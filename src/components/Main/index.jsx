@@ -18,34 +18,26 @@ const Main = ({
 
 	return (
 		<main className="main">
-			<div className="main-info">
-				{weatherData?.main ? (
-					<div>
-						<h1 className="city-name">{weatherData?.name}</h1>
-						<h2 className="temperature">
-							{weatherData?.main?.temp.toFixed()}{" "}
-							{units === "metric" ? "C" : "F"}&#176;{" "}
-						</h2>
-					</div>
-				) : (
-					""
-				)}
-				<div className="date-container">
-					<p>
-						{weatherData?.main
-							? `${days[date?.getDay()]}, ${date?.getDate()}`
-							: ""}
-					</p>
-					<p>
-						{weatherData?.main
-							? `${date?.getHours()}:
+			<div className="base-info">
+				<h1 className="base-info__city">{weatherData?.name}</h1>
+				<h2 className="base-info__temperature">
+					{weatherData?.main?.temp.toFixed()}{" "}
+					{units === "metric" ? "C" : "F"}&#176;{" "}
+				</h2>
+				<p className="base-info__day">
+					{weatherData?.main
+						? `${days[date?.getDay()]}, ${date?.getDate()}`
+						: ""}
+				</p>
+				<p className="base-info__time">
+					{weatherData?.main
+						? `${date?.getHours()}:
 						${date?.getMinutes() / 10 < 1 ? "0" : ""}
 						${date?.getMinutes()}`
-							: ""}
-					</p>
-				</div>
+						: ""}
+				</p>
 			</div>
-			<div className="icon-block">
+			<div className="hourly-forecast">
 				<HourlyForecast
 					weatherData={weatherData}
 					weatherDataHourly={weatherDataHourly}

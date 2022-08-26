@@ -69,28 +69,30 @@ function App() {
 	}, [weatherData]);
 	return (
 		<div className="App">
-			<Header
-				setWeatherData={setWeatherData}
-				fetchWeather={fetchWeather}
-				updateWeatherData={updateWeatherData}
-				units={units}
-				setUnits={setUnits}
-			/>
-			{!weatherData && (
-				<div className="app_text_container">
-					<h1>Enter the city name</h1>
-				</div>
-			)}
-			{weatherData && (
-				<Main
-					weatherData={weatherData}
-					weatherDataHourly={weatherDataHourly}
-					setDate={setDate}
+			<div className="container">
+				<Header
+					setWeatherData={setWeatherData}
+					fetchWeather={fetchWeather}
+					updateWeatherData={updateWeatherData}
 					units={units}
-					date={date}
-					days={days}
+					setUnits={setUnits}
 				/>
-			)}
+				{!weatherData && (
+					<div className="title">
+						<h1>Enter the city</h1>
+					</div>
+				)}
+				{weatherData && (
+					<Main
+						weatherData={weatherData}
+						weatherDataHourly={weatherDataHourly}
+						setDate={setDate}
+						units={units}
+						date={date}
+						days={days}
+					/>
+				)}
+			</div>
 		</div>
 	);
 }

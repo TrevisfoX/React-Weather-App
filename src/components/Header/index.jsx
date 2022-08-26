@@ -7,7 +7,7 @@ import logo from "../../assets/logo.png";
 const Header = ({ units, setUnits, updateWeatherData }) => {
 	return (
 		<header className="header">
-			<img src={logo} alt="Logo" className="logo-header" />
+			<img src={logo} alt="Logo" className="header__logo" />
 			<Search units={units} updateWeatherData={updateWeatherData} />
 			<ToggleMetricSystem
 				units={units}

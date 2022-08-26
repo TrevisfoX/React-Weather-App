@@ -1,14 +1,9 @@
-.bold {
-	font-weight: bold;
-}
-
 .toggle-button {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 50px;
-	padding: 0px 20px;
 	background-color: #ffffff;
+	height: 50px;
 	border: none;
 	outline: none;
 	cursor: pointer;
@@ -17,19 +12,30 @@
 	border-radius: 8px;
 	font-size: 20px;
 	transition: 0.5s;
-}
 
-.toggle-button:hover {
-	background-color: #d1d1d1;
-}
+	&:hover {
+		background-color: #d1d1d1;
+	}
 
-.toggle-spacer {
-	padding: 0 10px;
+	.bold {
+		font-weight: bold;
+	}
+
+	:first-child {
+		padding: 0 0 0 15px;
+	}
+
+	:last-child {
+		padding: 0 15px 0 0;
+	}
+
+	&__spacer {
+		padding: 0 10px;
+	}
 }
 
 @media screen and (max-width: 800px) {
 	.toggle-button {
 		height: 35px;
-		padding: 0px 15px;
 	}
 }
