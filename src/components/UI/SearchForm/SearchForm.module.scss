@@ -1,0 +1,26 @@
+.form {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+
+	.input {
+		width: 300px;
+		height: 40px;
+		padding: 5px 10px;
+		border-radius: 8px;
+		border: none;
+		outline: none;
+	}
+
+	.btn {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		background-color: white;
+		border: none;
+	}
+}

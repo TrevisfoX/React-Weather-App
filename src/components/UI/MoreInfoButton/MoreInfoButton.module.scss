@@ -1,0 +1,19 @@
+.button {
+	margin: 20px 0 0 0;
+	width: 100%;
+	height: 35px;
+	border: 0;
+	background-color: inherit;
+	color: white;
+	border-radius: 8px;
+	cursor: pointer;
+	transition: 0.4s;
+
+	.icon {
+		width: 35px;
+		height: 35px;
+	}
+}
+.button:hover {
+	transform: translateY(10px);
+}
