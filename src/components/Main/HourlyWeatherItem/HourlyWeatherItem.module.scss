@@ -1,0 +1,50 @@
+.hourly_block {
+	padding: 10px;
+	border-radius: 8px;
+	min-width: 180px;
+	width: fit-content;
+	margin: 0 auto;
+	margin-bottom: 20px;
+	background: rgba(255, 255, 255, 0.3);
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
+
+	.time {
+		margin: 0 0 10px 0;
+		font-size: 24px;
+	}
+
+	.temp {
+		margin: 0;
+		font-size: 20px;
+	}
+
+	.icon {
+		margin: 0 auto;
+	}
+
+	.further {
+		display: flex;
+		flex-direction: column;
+		font-size: 18px;
+
+		p {
+			display: flex;
+			align-items: center;
+			text-align: left;
+
+			span {
+				margin: 0 0 0 10px;
+			}
+		}
+
+		.info_icon {
+			width: 20px;
+			height: 20px;
+		}
+
+		p:not(:last-child) {
+			margin: 0 0 10px 0;
+		}
+	}
+}

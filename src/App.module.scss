@@ -1,0 +1,16 @@
+.container {
+	max-width: 1600px;
+	margin: 0 auto;
+	padding: 15px;
+}
+
+body {
+	height: 100vh;
+	background: rgb(148, 187, 233);
+	background: linear-gradient(
+		25deg,
+		rgba(148, 187, 233, 1) 50%,
+		rgba(238, 174, 202, 1) 50%,
+		rgba(238, 174, 202, 1) 50%
+	);
+}
