@@ -11,9 +11,9 @@ const HourlyWeatherItem = ({ element }) => {
 	return (
 		<div className={style.hourly_block}>
 			<h1 className={style.time}>{time}.00</h1>
-			<h2 className={style.temp}>{element.temp} &#8451;</h2>
+			<h2 className={style.temp}>{Math.round(element.temp)} &#8451;</h2>
 			<img
-				src={`http://openweathermap.org/img/wn/${element.weather[0].icon}@2x.png`}
+				src={`${process.env.REACT_APP_IMAGE_BASE_URL}${element.weather[0].icon}@2x.png`}
 				alt="Weather icon"
 				className={style.icon}
 				width={100}
@@ -22,18 +22,18 @@ const HourlyWeatherItem = ({ element }) => {
 			<div className={style.further}>
 				<p>
 					<CompressIcon className={style.info_icon} />:
-					<span>{element.pressure}</span>
+					<span>{element.pressure} hPa</span>
 				</p>
 				<p>
 					<FontAwesomeIcon
 						icon={faDroplet}
 						className={style.info_icon}
 					/>
-					: <span>{element.humidity}</span>
+					: <span>{element.humidity} %</span>
 				</p>
 				<p>
 					<AirIcon className={style.info_icon} />:
-					<span>{element.wind_speed}</span>
+					<span>{element.wind_speed} m/s</span>
 				</p>
 			</div>
 		</div>

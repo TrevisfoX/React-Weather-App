@@ -62,7 +62,7 @@ export const hourlySettings = {
 	infinite: false,
 	speed: 500,
 	slidesToShow: 8,
-	slidesToScroll: 1,
+	slidesToScroll: 8,
 	responsive: [
 		{
 			breakpoint: 1024,

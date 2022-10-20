@@ -7,13 +7,14 @@ const CurrentWeather = () => {
 
 	return (
 		<div className={style.current_block}>
-			<h1 className={style.date}>Today</h1>
 			<h2 className={style.city}>
 				{weatherData.name}, {weatherData.country}
 			</h2>
-			<h2 className={style.temp}>{weatherData.temp} &#8451;</h2>
+			<h2 className={style.temp}>
+				{Math.round(weatherData.temp)} &#8451;
+			</h2>
 			<img
-				src={`http://openweathermap.org/img/wn/${weatherData.weatherIcon}@2x.png`}
+				src={`${process.env.REACT_APP_IMAGE_BASE_URL}${weatherData.weatherIcon}@2x.png`}
 				alt="Weather icon"
 			/>
 		</div>
