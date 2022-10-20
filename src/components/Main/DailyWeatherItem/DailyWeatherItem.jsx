@@ -13,9 +13,8 @@ const DailyWeatherItem = ({ item, moreInfo }) => {
 			<h1 className={style.title}>
 				{day}, {fullDate} {x}
 			</h1>
-			<h2 className={style.temp}>{item.temp.day} &#8451;</h2>
 			<img
-				src={`http://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`}
+				src={`${process.env.REACT_APP_IMAGE_BASE_URL}${item.weather[0].icon}@2x.png`}
 				alt="Weather icon"
 				className={style.icon}
 				width={100}
@@ -24,15 +23,15 @@ const DailyWeatherItem = ({ item, moreInfo }) => {
 			<div className={style.limits}>
 				<div className={style.min_limit}>
 					<p>min</p>
-					<p>{item.temp.min} &#8451;</p>
+					<p>{Math.round(item.temp.min)} &#8451;</p>
 				</div>
 				<div className={style.max_limit}>
 					<p>max</p>
-					<p>{item.temp.max} &#8451;</p>
+					<p>{Math.round(item.temp.max)} &#8451;</p>
 				</div>
 			</div>
 
-			<MoreInfoButton moreInfo={moreInfo} />
+			<MoreInfoButton moreInfo={moreInfo} item={item} />
 		</div>
 	);
 };
