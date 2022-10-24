@@ -1,17 +1,17 @@
-.dailyBlock {
-	padding: 20px;
+.daily_card {
+	padding: 10px 0;
 	border-radius: 8px;
-	min-width: 235px;
+	min-width: 200px;
 	width: fit-content;
 	margin: 0 auto;
-	margin-bottom: 20px;
 	background: rgba(255, 255, 255, 0.3);
-	-webkit-backdrop-filter: blur(10px);
 	backdrop-filter: blur(10px);
+	box-shadow: 2px 2px 0px rgba(255, 255, 255, 0.3),
+		1px 1px 0px rgba(255, 255, 255, 0.3);
 
 	.title {
 		margin: 0 0 10px 0;
-		font-size: 24px;
+		font-size: 22px;
 	}
 
 	.temp {

@@ -1,0 +1,30 @@
+.daily {
+	display: grid;
+	margin: 0 auto;
+	grid-gap: 1rem;
+	grid-template-columns: repeat(7, 1fr);
+}
+
+@media (max-width: 1500px) {
+	.daily {
+		grid-template-columns: repeat(5, 1fr);
+	}
+}
+
+@media (max-width: 1150px) {
+	.daily {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+@media (max-width: 740px) {
+	.daily {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 440px) {
+	.daily {
+		grid-template-columns: repeat(1, 1fr);
+	}
+}

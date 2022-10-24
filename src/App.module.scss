@@ -1,16 +1,18 @@
-.container {
-	max-width: 1600px;
-	margin: 0 auto;
-	padding: 15px;
-}
+@import url("https://fonts.googleapis.com/css2?family=Barlow&display=swap");
 
 body {
-	height: 100vh;
-	background: rgb(148, 187, 233);
+	background: rgb(238, 174, 202);
 	background: linear-gradient(
-		25deg,
-		rgba(148, 187, 233, 1) 50%,
-		rgba(238, 174, 202, 1) 50%,
-		rgba(238, 174, 202, 1) 50%
+		90deg,
+		rgba(238, 174, 202, 1) 43%,
+		rgba(148, 187, 233, 1) 100%
 	);
+}
+
+.app {
+	height: fit-content;
+	margin: 0 auto;
+	max-width: 1600px;
+	padding: 15px 15px 50px 15px;
+	font-family: "Barlow", sans-serif;
 }

@@ -1,19 +1,20 @@
 import React from "react";
 import Slider from "react-slick";
-import HourlyWeatherItem from "../HourlyWeatherItem/HourlyWeatherItem";
+
 import { hourlySettings } from "../../../db/db";
+
+import HourlyWeatherItem from "../HourlyWeatherItem/HourlyWeatherItem";
 import style from "./HourlyWeatherList.module.scss";
 
-const HourlyWeatherList = ({ hourlyWeatherData, moreInfo }) => {
+const HourlyWeatherList = ({ filteredHourlyWeatherData }) => {
 	return (
 		<div className={style.hourly}>
 			<Slider {...hourlySettings}>
-				{hourlyWeatherData?.map((element) => {
+				{filteredHourlyWeatherData?.map((hourlyWeatherItem) => {
 					return (
 						<HourlyWeatherItem
-							key={element.dt}
-							element={element}
-							moreInfo={moreInfo}
+							key={hourlyWeatherItem.dt}
+							hourlyWeatherItem={hourlyWeatherItem}
 						/>
 					);
 				})}

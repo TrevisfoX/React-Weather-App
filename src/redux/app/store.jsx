@@ -1,10 +1,11 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
+
+import { getCoordsReducer } from "../features/coordinates/coordinatesReducer";
 import weatherReducer from "../features/weather/weatherSlice";
-import { addSearchCoordReducer } from "../features/coordinates/coordinatesReducer";
 
 const rootReducere = combineReducers({
 	weather: weatherReducer,
-	coords: addSearchCoordReducer,
+	coords: getCoordsReducer,
 });
 
 export const store = configureStore({

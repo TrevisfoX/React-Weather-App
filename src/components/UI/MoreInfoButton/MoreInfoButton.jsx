@@ -1,12 +1,20 @@
 import React from "react";
-import style from "./MoreInfoButton.module.scss";
+
 import KeyboardDoubleArrowDownIcon from "@mui/icons-material/KeyboardDoubleArrowDown";
 
-const MoreInfoButton = ({ moreInfo, item }) => {
+import style from "./MoreInfoButton.module.scss";
+
+const MoreInfoButton = ({ getHourlyWeatherData }) => {
 	return (
-		<button className={style.button} onClick={moreInfo} id={item.dt}>
-			<KeyboardDoubleArrowDownIcon className={style.icon} />
-		</button>
+		<div>
+			<button
+				className={style.hourly_button}
+				onClick={getHourlyWeatherData}
+				title="Get hourly weather"
+			>
+				<KeyboardDoubleArrowDownIcon className={style.hourly_icon} />
+			</button>
+		</div>
 	);
 };
 
