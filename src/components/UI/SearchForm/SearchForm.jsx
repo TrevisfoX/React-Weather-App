@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { getCoordsOperation } from "../../../features/coordinates/coordinatesApi";
+
 import SearchIcon from "@mui/icons-material/Search";
+
+import { coordsAPI } from "../../../redux/features/coordinates/coordinatesApi";
 import style from "./SearchForm.module.scss";
 
 const SearchForm = () => {
@@ -10,7 +12,7 @@ const SearchForm = () => {
 
 	const onHandlerSubmit = (e) => {
 		e.preventDefault();
-		dispatch(getCoordsOperation(city));
+		dispatch(coordsAPI(city));
 		setCity("");
 	};
 	const onHandlerChange = (e) => {
@@ -23,12 +25,12 @@ const SearchForm = () => {
 			<input
 				type="text"
 				placeholder="Search..."
-				className={style.input}
+				className={style.form_input}
 				value={city}
 				onChange={onHandlerChange}
 			/>
 			<button
-				className={style.btn}
+				className={style.form_button}
 				type="submit"
 				onClick={onHandlerSubmit}
 			>

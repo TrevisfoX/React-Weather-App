@@ -1,26 +1,43 @@
 .form {
 	display: flex;
 	align-items: center;
+	justify-content: center;
+	width: 100%;
 	gap: 15px;
 
-	.input {
-		width: 300px;
+	&_input {
+		width: 30%;
 		height: 40px;
-		padding: 5px 10px;
+		padding: 5px 15px;
 		border-radius: 8px;
+		font-size: 20px;
 		border: none;
 		outline: none;
+
+		&:focus {
+			border: 2px solid rgba(148, 187, 233);
+		}
 	}
 
-	.btn {
+	&_button {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		cursor: pointer;
 		width: 40px;
 		height: 40px;
+		cursor: pointer;
+		outline: none;
+		border: 0;
+		padding: 5px;
+		background: rgb(238, 174, 202);
+		color: white;
 		border-radius: 50%;
-		background-color: white;
-		border: none;
+	}
+	@media screen and (max-width: 700px) {
+		.form {
+			&_input {
+				width: 80%;
+			}
+		}
 	}
 }

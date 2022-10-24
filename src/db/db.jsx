@@ -23,70 +23,53 @@ export const month = [
 	"Dec",
 ];
 
-export const settings = {
+// React slick data
+export const hourlySettings = {
 	dots: true,
 	infinite: false,
 	speed: 500,
-	slidesToShow: 6,
-	slidesToScroll: 1,
+	slidesToShow: 7,
+	slidesToScroll: 7,
 	responsive: [
 		{
-			breakpoint: 1024,
+			breakpoint: 1645,
 			settings: {
-				slidesToShow: 2,
-				slidesToScroll: 2,
-				infinite: true,
+				slidesToShow: 4,
+				slidesToScroll: 4,
+				infinite: false,
 				dots: true,
 			},
 		},
 		{
-			breakpoint: 600,
+			breakpoint: 950,
 			settings: {
 				slidesToShow: 2,
-				slidesToScroll: 1,
-				initialSlide: 2,
+				slidesToScroll: 2,
+				dots: true,
 			},
 		},
 		{
-			breakpoint: 480,
+			breakpoint: 515,
 			settings: {
 				slidesToShow: 1,
 				slidesToScroll: 1,
+				dots: true,
 			},
 		},
 	],
 };
 
-export const hourlySettings = {
-	dots: true,
-	infinite: false,
-	speed: 500,
-	slidesToShow: 8,
-	slidesToScroll: 8,
-	responsive: [
-		{
-			breakpoint: 1024,
-			settings: {
-				slidesToShow: 2,
-				slidesToScroll: 2,
-				infinite: true,
-				dots: true,
-			},
-		},
-		{
-			breakpoint: 600,
-			settings: {
-				slidesToShow: 2,
-				slidesToScroll: 1,
-				initialSlide: 2,
-			},
-		},
-		{
-			breakpoint: 480,
-			settings: {
-				slidesToShow: 1,
-				slidesToScroll: 1,
-			},
-		},
-	],
+// Transition data
+export const duration = 500;
+
+export const defaultStyle = {
+	transition: `opacity ${duration}ms ease-in-out`,
+	opacity: 1,
+};
+
+export const transitionStyles = {
+	entering: { opacity: 1 },
+	entered: { opacity: 1 },
+	exiting: { opacity: 0 },
+	exited: { opacity: 0 },
 };
